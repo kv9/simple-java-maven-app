@@ -68,10 +68,14 @@
         </executions>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <version>2.2.0</version>
+      </extension>
+    </extensions>
   </build>
-  
-</project>
-<project>
   <distributionManagement>
     <snapshotRepository>
       <id>artifact-registry</id>
@@ -82,7 +86,6 @@
       <url>artifactregistry://asia-south1-maven.pkg.dev/experiments-06222022/test-cicd-maven</url>
     </repository>
   </distributionManagement>
-
   <repositories>
     <repository>
       <id>artifact-registry</id>
@@ -95,14 +98,4 @@
       </snapshots>
     </repository>
   </repositories>
-
-  <build>
-    <extensions>
-      <extension>
-        <groupId>com.google.cloud.artifactregistry</groupId>
-        <artifactId>artifactregistry-maven-wagon</artifactId>
-        <version>2.2.0</version>
-      </extension>
-    </extensions>
-  </build>
 </project>
